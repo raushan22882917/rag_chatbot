@@ -1,0 +1,100 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  background-color: #343a40;
+  color: white;
+}
+.logo {
+  height: 50px;
+}
+.nav-title {
+  color: white;
+  font-size: 24px;
+  margin-left: 15px;
+  font-weight: 600;
+}
+.nav-item {
+  margin-left: 20px;
+  font-weight: 500;
+}
+.navbar-toggler-icon {
+  color: white;
+}
+.chat-container {
+  margin-top: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-grow: 1; /* This ensures that the container grows and pushes the footer to the bottom */
+}
+.chat-container h1 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.reply-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+}
+.input-group-text {
+  background-color: #ffc107;
+  border: none;
+}
+.form-control {
+  border-radius: 0;
+  border: 1px solid #ced4da;
+  padding: 15px;
+}
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  padding: 10px 25px;
+  font-weight: 600;
+}
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+.btn-outline-light {
+  border: none;
+}
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 15px 0;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1000;
+}
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+.dark-mode .navbar {
+  background-color: #212529;
+}
+.dark-mode .chat-container {
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+}
+.dark-mode .reply-container {
+  background-color: #333;
+}
+.dark-mode .nav-link, .dark-mode .nav-item span {
+  color: #e0e0e0 !important;
+}

@@ -1,0 +1,13 @@
+streamlit
+PyPDF2
+langchain
+langchain-google-genai
+python-dotenv
+faiss-cpu
+google-generativeai
+psycopg2-binary
+Flask
+langchain-community
+pdf2image
+Pillow
+pytesseract

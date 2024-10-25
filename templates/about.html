@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About NCERT Book Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Font Awesome for additional icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+
+
+
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Website Logo" class="logo">
+          <h2 class="nav-title">NcertChat</h2>
+    
+          <!-- Hamburger menu for mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarMobile">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a href="{{ url_for('index') }}" class="nav-link">
+                    <i class="fa fa-comments" aria-hidden="true"></i> Chat
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('about') }}" class="nav-link">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i> About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('feedback') }}" class="nav-link">
+                    <i class="fa fa-comment-dots" aria-hidden="true"></i> Feedback
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url_for('admin') }}" class="nav-link">
+                    <i class="fa fa-user-shield" aria-hidden="true"></i> Admin
+                  </a>
+                </li>
+              
+                {% if session['user_email'] %}
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <span>{{ session['user_email'].split('@')[0] }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                      <li><a class="dropdown-item" href="{{ url_for('logout') }}">
+                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i> Logout
+                      </a></li>
+                    </ul>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                    <a href="{{ url_for('login') }}" class="nav-link">
+                      <i class="fa fa-sign-in-alt" aria-hidden="true"></i> Login
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+              
+          </div>
+    
+          <!-- Dark Mode Toggle Button -->
+          <button id="darkModeToggle" class="btn btn-outline-light">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </nav>
+
+    <main>
+        <section id="purpose">
+            <h2>Purpose</h2>
+            <p>The NCERT Book Chatbot is designed to help students of classes 9 to 12 access information and study materials from NCERT textbooks. It aims to provide a convenient way for students to get answers to their questions and understand complex topics easily.</p>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Instant answers to questions from NCERT textbooks.</li>
+                <li>Interactive and user-friendly interface.</li>
+                <li>Covers subjects for classes 9, 10, 11, and 12.</li>
+                <li>Access to study materials, summaries, and explanations.</li>
+                <li>24/7 availability for students.</li>
+            </ul>
+        </section>
+
+        <section id="usage">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Open the NCERT Book Chatbot application.</li>
+                <li>Select your class (9, 10, 11, or 12).</li>
+                <li>Type your question regarding any topic or subject.</li>
+                <li>Receive instant responses and explore related materials.</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NCERT Book Chatbot. All rights reserved.</p>
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
