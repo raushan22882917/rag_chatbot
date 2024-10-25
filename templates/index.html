@@ -75,6 +75,112 @@
     line-height: 1.6;
     color: #495057;
 }
+
+
+/* Container Styling */
+.container.chat-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+/* Header Styling */
+.container.chat-container h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border: 2px double #ffc107;
+}
+
+/* Input Form Styling */
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.input-group {
+  display: flex;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.form-control {
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.input-group-append .btn {
+  background-color: #ffc107;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-group-append .btn:hover {
+  background-color: #e0a800;
+}
+
+/* Reply Container Styling */
+.reply-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-left: 4px solid #ffc107;
+  border-radius: 5px;
+}
+
+.reply-container h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.reply-container p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Search Links Styling */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-top: 0.5rem;
+}
+
+ul li a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #0056b3;
+}
+
   </style>
 
 </head>
@@ -146,14 +252,12 @@
 
   <!-- Main Content -->
   <div class="container chat-container">
-    <h1>Chat with PDF using Gemini 💁</h1>
+    <h1>NCERT CHAT</h1>
 
     <form method="post" class="chat-form">
       <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-paperclip"></i></span>
-        </div>
-        <input type="text" class="form-control" name="user_question" placeholder="Ask a Question from the PDF Files" required>
+        
+        <input type="text" class="form-control" name="user_question" placeholder="Ask a Question from NCERT" required>
         <div class="input-group-append">
           <button class="btn btn-warning" type="submit"><i class="fas fa-paper-plane"></i></button>
         </div>
