@@ -11,3 +11,4 @@ langchain-community
 pdf2image
 Pillow
 pytesseract
+gunicorn
