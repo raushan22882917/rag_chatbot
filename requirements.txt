@@ -10,4 +10,6 @@ pdf2image
 pytesseract
 requests
 beautifulsoup4
+langchain-community
+
 gunicorn
